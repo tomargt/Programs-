@@ -67,7 +67,7 @@ items = sales_tax_calculator.get_items
 total_sales_tax = sales_tax_calculator.get_total_tax
 total_price = sales_tax_calculator.get_total_price
 items.each do |item|
-  puts "#{item[:name]}: #{'%.2f' % ((item[:price] + item[:sales_tax]) * item[:quantity])}"
+  puts "#{item[:name]}: ₹#{'%.2f' % ((item[:price] + item[:sales_tax]) * item[:quantity])}"
 end
-puts "Applied Taxes: #{'%.2f' %total_sales_tax}"
-puts "Total: #{'%.2f' %total_price}"
+puts "Applied Taxes: ₹#{'%.2f' %total_sales_tax}"
+puts "Total: ₹#{'%.2f' %total_price}"
