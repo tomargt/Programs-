@@ -3,7 +3,7 @@ class SalesTaxCalculator
   EXEMPTED_ITEMS = ["chocolate", "chocolates", "pill", "pills", "book", "books"]
   
   def initialize
-  	@items = []
+    @items = []
   end
   
   def get_input
@@ -12,14 +12,14 @@ class SalesTaxCalculator
     item_list = []
     puts "Enter product quantity and detail as (1 book at 10.09) :"
     number_input.times do
-    	item_list.push(gets.chomp)
-		end
-		item_list
-	end
+      item_list.push(gets.chomp)
+    end
+    item_list
+  end
   
   def get_order(item)
-  	order_list = item.split
-  	{ quantity: order_list[0].to_i, price: order_list[-1].to_f, name: item.split("at ") [0],
+    order_list = item.split
+    { quantity: order_list[0].to_i, price: order_list[-1].to_f, name: item.split("at ") [0],
       is_imported: (order_list.include? "imported"), is_applies_tax: applies_tax?(order_list) }
   end
 
@@ -55,7 +55,7 @@ class SalesTaxCalculator
   end
 
   def get_total_price
-		@items.inject(0) { |total_cost, current_item| total_cost + (current_item[:price] + current_item[:sales_tax]) * current_item[:quantity]  }
+    @items.inject(0) { |total_cost, current_item| total_cost + (current_item[:price] + current_item[:sales_tax]) * current_item[:quantity]  }
   end
   
 end
